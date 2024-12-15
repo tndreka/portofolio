@@ -1,0 +1,138 @@
+.solar-system {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+}
+
+.planet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--planet-size);
+  height: var(--planet-size);
+  border-radius: 50%;
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+.planet-details {
+  position: fixed;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  transition: all 0.5s ease-out;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  display: none;
+}
+
+.planet-title {
+  font-size: 4rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: 1;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.planet-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.planet-cta {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.planet-cta:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Planet-specific styles */
+.mercury { background-image: url('/assets/mercury.jpg'); }
+.venus { background-image: url('/assets/venus.jpg'); }
+.earth { background-image: url('/assets/earth.jpg'); }
+.mars { background-image: url('/assets/mars.jpg'); }
+.jupiter { background-image: url('/assets/jupiter.jpg'); }
+.saturn { background-image: url('/assets/saturn.jpg'); }
+.uranus { background-image: url('/assets/uranus.jpg'); }
+.neptune { background-image: url('/assets/neptune.jpg'); }
+.pluto { background-image: url('/assets/pluto.jpg'); }
+
+/* Animation states */
+.planet.active {
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 2;
+}
+
+.planet.active .planet-details {
+  display: block;
+}
+
+.planet.behind {
+  transform: translate(-50%, -50%) scale(0.6) translateZ(-500px);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.planet.front {
+  transform: translate(-50%, -50%) scale(1.2) translateZ(500px);
+  z-index: 3;
+  opacity: 0.6;
+}
+
+.planet:not(.active) .planet-details {
+  display: none;
+}
+
+/* Adjust preview text styles to prevent overlap */
+.preview {
+    overflow: auto;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 10px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Remove hiding styles */
+.planet-menu,
+.planet-item,
+.planet-preview,
+.planet-info {
+    display: flex;
+}
+
+.planet,
+.planet-details,
+.planet-title,
+.planet-description,
+.planet-cta {
+    display: initial;
+}

@@ -1,0 +1,22 @@
+.logo {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: var(--z-index-base);
+}
+
+.logo-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.logo-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-earth);
+  margin-top: 0.5rem;
+  letter-spacing: 0.2em;
+}

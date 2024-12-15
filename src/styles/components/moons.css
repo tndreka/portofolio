@@ -1,0 +1,27 @@
+/* .moon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: all var(--transition-speed);
+}
+
+.moon-name {
+  position: absolute;
+  top: -30px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.planet.active .moon {
+  opacity: 1;
+  transform: translate(var(--moon-x), var(--moon-y)) scale(1);
+}
+
+.planet:not(.active) .moon {
+  opacity: 0;
+  transform: translate(var(--moon-x), var(--moon-y)) scale(0);
+} */

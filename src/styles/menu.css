@@ -1,0 +1,116 @@
+.planet-menu {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: var(--z-index-base);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.planet-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.planet-item:hover,
+.planet-item.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.planet-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    width: 3px;
+    height: 0;
+    background: #64ffda;
+    transition: height 0.3s ease;
+}
+
+.planet-item:hover::before,
+.planet-item.active::before {
+    height: 70%;
+}
+
+.planet-preview {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.planet-item:hover .planet-preview,
+.planet-item.active .planet-preview {
+    transform: scale(1.1);
+}
+
+.planet-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.planet-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.planet-item:hover .planet-name,
+.planet-item.active .planet-name {
+    color: #64ffda;
+}
+
+.project-status {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.2rem;
+    transition: color 0.3s ease;
+}
+
+.planet-item:hover .project-status,
+.planet-item.active .project-status {
+    color: rgba(100, 255, 218, 0.7);
+}
+
+@media (max-width: 768px) {
+    .planet-menu {
+        left: 1rem;
+        padding: 1rem;
+    }
+    
+    .planet-item {
+        padding: 0.6rem 1rem;
+    }
+    
+    .planet-preview {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .planet-name {
+        font-size: 0.8rem;
+    }
+}

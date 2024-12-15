@@ -1,0 +1,29 @@
+:root {
+  /* Colors */
+  --color-mercury: #DEF4FC;
+  --color-venus: #F7CC7F;
+  --color-earth: #428ED4;
+  --color-mars: #EF5350;
+  --color-jupiter: #E3A857;
+  --color-saturn: #C7956D;
+  --color-uranus: #82B1FF;
+  --color-neptune: #2196F3;
+  
+  /* Fonts */
+  --font-primary: 'Montserrat', sans-serif;
+  
+  /* Sizes */
+  --planet-size: 400px;
+  
+  /* Transitions */
+  --transition-speed: 800ms;
+  
+  /* Z-index */
+  --z-index-base: 1000;
+  
+  /* Backgrounds */
+  background: #000;
+  color: #fff;
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+}
